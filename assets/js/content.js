@@ -47,7 +47,7 @@ window.SITE = {
       note: "طلب إحالة الملف إلى لجنة الإخلاء الطبي.",
       img: "assets/img/docs/letter-minister.jpg", download: true },
     { cat: "scans", title: "تقرير PET/CT: التشخيص والتاريخ المرضي",
-      note: "9 آب 2026. حُجبت البيانات الشخصية.",
+      note: "9 آب 2026.",
       img: "assets/img/docs/pet-1.jpg", download: false },
     { cat: "scans", title: "تقرير PET/CT: نتائج الحوض والفقرات",
       note: "9 آب 2026.", img: "assets/img/docs/pet-2.jpg", download: false },
