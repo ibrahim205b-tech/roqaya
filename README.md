@@ -28,7 +28,7 @@ python3 -m http.server 8000
 1. ادخل إلى المستودع على GitHub ثم Settings ثم Pages.
 2. في Source اختر **Deploy from a branch**.
 3. اختر الفرع `main` والمجلد `/ (root)` ثم Save.
-4. بعد دقيقة تقريباً يعمل الموقع على: https://ibrahim205b-tech.github.io/roqaya/ (مع HTTPS تلقائياً).
+4. بعد دقيقة تقريباً يعمل الموقع على: https://roqayya.pages.dev/ (مع HTTPS تلقائياً).
 
 إذا تغيّر الرابط (نطاق خاص مثلاً) عدّل `url` في `assets/js/content.js` وروابط `og:` و`canonical` في `index.html`.
 

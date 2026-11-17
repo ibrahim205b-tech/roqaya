@@ -5,7 +5,7 @@
    ============================================================ */
 window.SITE = {
   /* رابط الموقع بعد النشر (يُستخدم في أزرار المشاركة) */
-  url: "https://ibrahim205b-tech.github.io/roqaya/",
+  url: "https://roqayya.pages.dev/",
 
   /* صورة الواجهة: ضع مسار الصورة بعد موافقة العائلة، مثال: "assets/img/roqaya.jpg" */
   heroPhoto: "",
