@@ -44,7 +44,7 @@ window.SITE = {
     { cat: "official", title: "وثيقة عدم توفر العملية داخل العراق",
       note: "مستشفى وارث الدولي لعلاج الأورام.", img: "", download: false },
     { cat: "official", title: "مناشدة إلى السيد وزير الصحة",
-      note: "طلب إحالة الملف إلى لجنة الإخلاء الطبي. حُجبت بيانات التواصل.",
+      note: "طلب إحالة الملف إلى لجنة الإخلاء الطبي.",
       img: "assets/img/docs/letter-minister.jpg", download: true },
     { cat: "scans", title: "تقرير PET/CT: التشخيص والتاريخ المرضي",
       note: "9 آب 2026. حُجبت البيانات الشخصية.",
