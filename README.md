@@ -42,7 +42,7 @@ python3 -m http.server 8000
 | إضافة مرحلة جديدة للقصة | `timeline` |
 | إضافة وثيقة | `documents` (ارفع الصورة إلى `assets/img/docs/` أولاً) |
 | صور المعرض | `gallery` |
-| بيانات التبرع | `donation` ثم `enabled: true` |
+| بيانات التبرع | `donation` (المحفظة، الحساب، الهاتف) |
 | واتساب وبريد إبراهيم وصورته | `advocate` |
 
 قسم التحويلات يبقى مخفياً ما دام `donation.enabled` يساوي `false`.

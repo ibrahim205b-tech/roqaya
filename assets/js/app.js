@@ -175,13 +175,15 @@
 
   /* ---------- التبرع ---------- */
   var D = S.donation || {}, card = $("donateCard");
-  if (D.enabled && (D.cardNumber || D.fatherPhone)) {
+  if (D.enabled && (D.walletNumber || D.bankAccount || D.cardNumber || D.fatherPhone)) {
     card.appendChild(el("h3", "", "وسائل المساهمة"));
+    if (D.walletNumber) card.appendChild(copyField("رقم المحفظة" + (D.walletProvider ? " (" + D.walletProvider + ")" : ""), D.walletNumber, "نسخ الرقم"));
+    if (D.bankAccount) card.appendChild(copyField("رقم الحساب المصرفي" + (D.bankName ? " (" + D.bankName + ")" : ""), D.bankAccount, "نسخ الرقم"));
     if (D.cardNumber) card.appendChild(copyField("رقم بطاقة الماستر كارد", D.cardNumber, "نسخ الرقم"));
-    if (D.cardHolder) card.appendChild(copyField("اسم صاحب البطاقة", D.cardHolder));
+    if (D.cardHolder) card.appendChild(copyField("اسم صاحب الحساب", D.cardHolder));
     if (D.receiver) card.appendChild(copyField("الجهة المستلمة للأموال", D.receiver));
     if (D.fatherPhone) card.appendChild(copyField("هاتف والد رقية", D.fatherPhone, "نسخ الهاتف"));
-    card.appendChild(el("p", "warn", "قبل التحويل: تأكد من مطابقة اسم المستفيد ورقم البطاقة لما هو منشور هنا، وتواصل مع والد رقية للتحقق إن ساورك أي شك."));
+    card.appendChild(el("p", "warn", "قبل التحويل: تأكد من مطابقة الرقم لما هو منشور هنا، وتواصل مع والد رقية عبر واتساب للتحقق من اسم المستفيد."));
     if (D.whatsapp) {
       var w = el("a", "btn btn-primary", "تواصل عبر واتساب"); w.href = waLink(D.whatsapp, "السلام عليكم، أودّ المساهمة في علاج رقية."); w.target = "_blank"; w.rel = "noopener";
       card.appendChild(w);
