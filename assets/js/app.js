@@ -182,7 +182,7 @@
     if (D.cardNumber) card.appendChild(copyField("رقم بطاقة الماستر كارد", D.cardNumber, "نسخ الرقم"));
     if (D.cardHolder) card.appendChild(copyField("اسم صاحب الحساب", D.cardHolder));
     if (D.receiver) card.appendChild(copyField("الجهة المستلمة للأموال", D.receiver));
-    if (D.fatherPhone) card.appendChild(copyField("هاتف والد رقية", D.fatherPhone, "نسخ الهاتف"));
+    if (D.fatherPhone) card.appendChild(copyField("هاتف والد رقية" + (D.fatherName ? " (" + D.fatherName + ")" : ""), D.fatherPhone, "نسخ الهاتف"));
     card.appendChild(el("p", "warn", "قبل التحويل: تأكد من مطابقة الرقم لما هو منشور هنا، وتواصل مع والد رقية عبر واتساب للتحقق من اسم المستفيد."));
     if (D.whatsapp) {
       var w = el("a", "btn btn-primary", "تواصل عبر واتساب"); w.href = waLink(D.whatsapp, "السلام عليكم، أودّ المساهمة في علاج رقية."); w.target = "_blank"; w.rel = "noopener";
@@ -242,6 +242,6 @@
     else c.appendChild(el("p", "fine", "تُضاف وسيلة التواصل بعد موافقة صاحبها."));
     return c;
   }
-  $("contacts").appendChild(contactCard("والد رقية", "للاستفسار عن الحالة والتحقق من المعلومات.", D.fatherPhone, D.whatsapp, ""));
-  $("contacts").appendChild(contactCard(A.name || "ساعي إيصال الحالة", "ساعي إيصال الحالة إلى الجهات الطبية والإنسانية.", "", A.whatsapp, A.email));
+  $("contacts").appendChild(contactCard(D.fatherName ? "والد رقية: " + D.fatherName : "والد رقية", "للاستفسار عن الحالة والتحقق من المعلومات.", D.fatherPhone, D.whatsapp, ""));
+  $("contacts").appendChild(contactCard(A.name || "ساعي إيصال الحالة", "ساعي إيصال الحالة إلى الجهات الطبية والإنسانية.", A.phone, A.whatsapp, A.email));
 })();
