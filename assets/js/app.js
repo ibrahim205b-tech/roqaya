@@ -14,7 +14,9 @@
   /* ================= اللغة / language ================= */
   var lang = "ar";
   try { lang = new URLSearchParams(location.search).get("lang") || localStorage.getItem("rq-lang") || "ar"; } catch (e) {}
-  if (lang !== "en") lang = "ar";
+  if (["ar", "en", "ckb"].indexOf(lang) < 0) lang = "ar";
+  var LANGS = ["ar", "ckb", "en"];
+  var isRtl = function (l) { return (l || lang) !== "en"; };
   var U = function () { return I.ui[lang]; };
   var T = function (o) { return o == null ? "" : (typeof o === "string" ? o : (o[lang] || o.ar || "")); };
 
@@ -25,7 +27,8 @@
 
   var MONTHS = {
     ar: ["كانون الثاني", "شباط", "آذار", "نيسان", "أيار", "حزيران", "تموز", "آب", "أيلول", "تشرين الأول", "تشرين الثاني", "كانون الأول"],
-    en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    ckb: ["کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەممووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانوونی یەکەم"]
   };
   function fmtDate(iso) {
     if (!iso) return "";
@@ -35,19 +38,18 @@
 
   function applyStatic() {
     var html = document.documentElement;
-    html.lang = lang; html.dir = lang === "ar" ? "rtl" : "ltr";
+    html.lang = lang; html.dir = isRtl() ? "rtl" : "ltr";
     qa("[data-i18n]").forEach(function (n) {
       var k = n.getAttribute("data-i18n");
-      n.textContent = lang === "ar" ? AR[k] : (I.en[k] != null ? I.en[k] : AR[k]);
+      n.textContent = lang === "ar" ? AR[k] : (I[lang][k] != null ? I[lang][k] : AR[k]);
     });
     qa("[data-i18n-aria]").forEach(function (n) {
       var k = n.getAttribute("data-i18n-aria");
-      n.setAttribute("aria-label", lang === "ar" ? ARIA[k] : (I.en[k] || ARIA[k]));
+      n.setAttribute("aria-label", lang === "ar" ? ARIA[k] : (I[lang][k] || ARIA[k]));
     });
     document.title = U().title;
-    var lb = $("langBtn");
-    lb.textContent = U().langBtn; lb.setAttribute("aria-label", U().langAria);
-    lb.setAttribute("lang", lang === "ar" ? "en" : "ar");
+    qa("#langs button").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-l") === lang); });
+    $("langs").setAttribute("aria-label", U().langAria);
     $("heroImg").alt = T(S.hero && S.hero.alt);
   }
 
@@ -57,19 +59,20 @@
     if (user) {
       try {
         var u = new URL(location.href);
-        if (l === "en") u.searchParams.set("lang", "en"); else u.searchParams.delete("lang");
+        if (l !== "ar") u.searchParams.set("lang", l); else u.searchParams.delete("lang");
         history.replaceState(null, "", u.pathname + u.search + u.hash);
       } catch (e) {}
     }
     applyStatic(); renderAll();
   }
-  $("langBtn").addEventListener("click", function () {
-    var next = lang === "ar" ? "en" : "ar";
+  qa("#langs button").forEach(function (b) { b.addEventListener("click", function () {
+    var next = b.getAttribute("data-l");
+    if (next === lang) return;
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) { setLang(next, true); return; }
     document.body.classList.add("switching");
     setTimeout(function () { setLang(next, true); document.body.classList.remove("switching"); }, 180);
-  });
+  }); });
 
   /* ================= إظهار الأقسام / section switches ================= */
   var SEC = S.sections || {};
@@ -172,7 +175,7 @@
   stage.addEventListener("click", function (e) { if (e.target === stage) closeLb(); });
   document.addEventListener("keydown", function (e) {
     if (lb.hidden) return;
-    var rtl = lang === "ar";
+    var rtl = isRtl();
     if (e.key === "Escape") closeLb();
     else if (e.key === "ArrowRight") show(idx + (rtl ? -1 : 1));
     else if (e.key === "ArrowLeft") show(idx + (rtl ? 1 : -1));
@@ -187,7 +190,7 @@
   stage.addEventListener("touchend", function (e) {
     if (sx == null || stage.classList.contains("zoom")) return;
     var dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 60) show(idx + ((dx > 0) === (lang === "ar") ? 1 : -1));
+    if (Math.abs(dx) > 60) show(idx + ((dx > 0) === isRtl() ? 1 : -1));
   });
 
   /* ================= الوثائق / documents ================= */
@@ -313,20 +316,21 @@
   }
   function renderAppeal() {
     var l = appealLang || lang, A = S.appeal || {};
-    $("tabAr").setAttribute("aria-selected", l === "ar"); $("tabEn").setAttribute("aria-selected", l === "en");
-    var c = $("appealText"); c.innerHTML = ""; c.lang = l; c.dir = l === "ar" ? "rtl" : "ltr";
+    qa("[role=tab][data-l]").forEach(function (t) { t.setAttribute("aria-selected", t.getAttribute("data-l") === l); t.tabIndex = t.getAttribute("data-l") === l ? 0 : -1; });
+    var c = $("appealText"); c.innerHTML = ""; c.lang = l; c.dir = isRtl(l) ? "rtl" : "ltr";
     c.appendChild(el("h3", "", A.title ? A.title[l] : ""));
     (A.body ? A.body[l] : "").split(/\n\n+/).forEach(function (p) { c.appendChild(el("p", "", p)); });
     var f = el("p", "appeal-url"); f.appendChild(document.createTextNode((A.footer ? A.footer[l] : "") + " "));
     var a = el("a", "", pageUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")); a.href = pageUrl; a.dir = "ltr"; f.appendChild(a);
     c.appendChild(f);
   }
-  $("tabAr").addEventListener("click", function () { appealLang = "ar"; renderAppeal(); });
-  $("tabEn").addEventListener("click", function () { appealLang = "en"; renderAppeal(); });
+  qa("[role=tab][data-l]").forEach(function (t) { t.addEventListener("click", function () { appealLang = t.getAttribute("data-l"); renderAppeal(); }); });
   $("appealText").parentNode.querySelector("[role=tablist]").addEventListener("keydown", function (e) {
     if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-    appealLang = (appealLang || lang) === "ar" ? "en" : "ar"; renderAppeal();
-    $(appealLang === "ar" ? "tabAr" : "tabEn").focus();
+    var tabs = qa("[role=tab][data-l]").map(function (t) { return t.getAttribute("data-l"); });
+    var i = tabs.indexOf(appealLang || lang), step = (e.key === "ArrowLeft") === isRtl() ? 1 : -1;
+    appealLang = tabs[(i + step + tabs.length) % tabs.length]; renderAppeal();
+    document.querySelector("[role=tab][data-l=" + appealLang + "]").focus();
   });
   $("copyAppeal").addEventListener("click", function () {
     var b = this; copy(appealText(appealLang || lang)).then(function () { flash(b, U().copied); say($("appealStatus"), U().textCopied); });
@@ -338,8 +342,8 @@
   });
   $("printAppeal").addEventListener("click", function () {
     var l = appealLang || lang, A = S.appeal || {}, box = $("printBox");
-    box.innerHTML = ""; box.lang = l; box.dir = l === "ar" ? "rtl" : "ltr";
-    box.appendChild(el("p", "pr-brand", l === "ar" ? "رقية · استغاثة إنسانية" : "Ruqayya · Humanitarian appeal"));
+    box.innerHTML = ""; box.lang = l; box.dir = isRtl(l) ? "rtl" : "ltr";
+    box.appendChild(el("p", "pr-brand", I.ui[l].printBrand));
     box.appendChild(el("h1", "", A.title[l]));
     A.body[l].split(/\n\n+/).forEach(function (p) { box.appendChild(el("p", "", p)); });
     box.appendChild(el("p", "pr-url", A.footer[l] + " " + pageUrl));
@@ -466,7 +470,7 @@
     var box = $("hadiths"); box.innerHTML = "";
     (S.hadiths || []).forEach(function (h) {
       var q = el("blockquote", "hadith reveal");
-      q.appendChild(el("p", "", (lang === "ar" ? "«" : "“") + T(h.text) + (lang === "ar" ? "»" : "”")));
+      q.appendChild(el("p", "", (isRtl() ? "«" : "“") + T(h.text) + (isRtl() ? "»" : "”")));
       box.appendChild(q);
     });
   }

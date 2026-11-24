@@ -2,5 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://roqayya.pages.dev/</loc><lastmod>2026-11-24</lastmod>
     <xhtml:link rel="alternate" hreflang="ar" href="https://roqayya.pages.dev/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://roqayya.pages.dev/?lang=en"/></url>
+    <xhtml:link rel="alternate" hreflang="en" href="https://roqayya.pages.dev/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://roqayya.pages.dev/?lang=ckb"/></url>
 </urlset>

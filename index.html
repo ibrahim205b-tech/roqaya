@@ -9,9 +9,12 @@
 <link rel="canonical" href="https://roqayya.pages.dev/">
 <link rel="alternate" hreflang="ar" href="https://roqayya.pages.dev/">
 <link rel="alternate" hreflang="en" href="https://roqayya.pages.dev/?lang=en">
+<link rel="alternate" hreflang="ckb" href="https://roqayya.pages.dev/?lang=ckb">
+<link rel="alternate" hreflang="x-default" href="https://roqayya.pages.dev/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_IQ">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ckb_IQ">
 <meta property="og:site_name" content="رقية · Ruqayya">
 <meta property="og:title" content="رقية تستحق فرصة للحياة">
 <meta property="og:description" content="شابة في الحادية والعشرين تحتاج إلى جراحة متقدمة خارج العراق. اقرأ قصتها وشارك استغاثتها.">
@@ -26,14 +29,14 @@
 <meta name="twitter:image" content="https://roqayya.pages.dev/assets/img/og.png">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/icon-180.png">
-<link rel="preload" href="assets/fonts/ReadexPro-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/Almarai-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NotoKufiArabic-arabic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/NotoSansArabic-arabic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"رقية · Ruqayya","url":"https://roqayya.pages.dev/","inLanguage":["ar","en"],"description":"Humanitarian appeal for Ruqayya, a 21-year-old from Karbala who needs advanced surgery outside Iraq."}
+{"@context":"https://schema.org","@type":"WebSite","name":"رقية · Ruqayya","url":"https://roqayya.pages.dev/","inLanguage":["ar","ckb","en"],"description":"Humanitarian appeal for Ruqayya, a 21-year-old from Karbala who needs advanced surgery outside Iraq."}
 </script>
-<script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("rq-lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr";}}catch(e){}</script>
+<script>try{var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("rq-lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr";}else if(l==="ckb"){document.documentElement.lang="ckb";}}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
@@ -56,7 +59,7 @@
       <a href="#contact" data-i18n="nav.contact">التواصل</a>
     </nav>
     <div class="top-act">
-      <button class="lang" id="langBtn" type="button" lang="en" aria-label="Switch to English">EN</button>
+      <div class="langs" id="langs" role="group" aria-label="اللغة"><button type="button" data-l="ar" lang="ar" aria-pressed="true">عربي</button><button type="button" data-l="ckb" lang="ckb" aria-pressed="false">کوردی</button><button type="button" data-l="en" lang="en" aria-pressed="false">EN</button></div>
       <a class="btn btn-gold btn-sm top-cta" href="#appeal" data-i18n="nav.appeal">الاستغاثة</a>
       <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav" aria-label="القائمة" data-i18n-aria="menu"><span></span><span></span><span></span></button>
     </div>
@@ -166,8 +169,9 @@
       <h2 data-i18n="appeal.title">نداء من أجل رقية</h2>
     </header>
     <div class="appeal-tabs reveal" role="tablist" aria-label="لغة نص الاستغاثة" data-i18n-aria="appeal.tabsAria">
-      <button role="tab" id="tabAr" aria-selected="true" aria-controls="appealText" type="button">العربية</button>
-      <button role="tab" id="tabEn" aria-selected="false" aria-controls="appealText" type="button">English</button>
+      <button role="tab" id="tabAr" data-l="ar" lang="ar" aria-selected="true" aria-controls="appealText" type="button">العربية</button>
+      <button role="tab" id="tabKu" data-l="ckb" lang="ckb" aria-selected="false" aria-controls="appealText" type="button" tabindex="-1">کوردی</button>
+      <button role="tab" id="tabEn" data-l="en" lang="en" aria-selected="false" aria-controls="appealText" type="button" tabindex="-1">English</button>
     </div>
     <article class="appeal-card reveal" id="appealText" role="tabpanel" tabindex="0"></article>
     <div class="appeal-act reveal">

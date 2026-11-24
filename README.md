@@ -37,14 +37,14 @@ site/
 ├── assets/js/i18n.js     الترجمة الإنجليزية لنصوص الواجهة
 ├── assets/js/app.js      المنطق: اللغة، والوثائق، والعارض، والمشاركة، والنموذج
 ├── assets/css/style.css  الهوية البصرية
-├── assets/fonts/         خطوط مستضافة محلياً (Readex Pro للعناوين، Almarai للنصوص)
+├── assets/fonts/         خطوط مستضافة محلياً (Noto Kufi Arabic للعناوين، Noto Sans Arabic للنصوص؛ تدعم العربية والكردية)
 ├── assets/img/           صورة رقية، والوثائق، وصورة المشاركة og.png، والأيقونات
 ├── _headers  robots.txt  sitemap.xml
 ```
 
 ## تحديث المحتوى / Editing content
 
-افتح `assets/js/content.js`. كل نص مكتوب بالشكل `{ ar: "...", en: "..." }`.
+افتح `assets/js/content.js`. كل نص مكتوب بثلاث لغات: `{ ar: "...", en: "...", ckb: "..." }` (`ckb` = الكردية السورانية). نصوص الواجهة الثابتة في `assets/js/i18n.js`. الروابط المباشرة: `?lang=en` و`?lang=ckb`.
 
 | ما تريد | أين |
 |---|---|

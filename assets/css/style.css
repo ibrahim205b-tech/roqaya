@@ -15,8 +15,8 @@
   --on-navy:#F5F1E9;
   --on-navy-2:rgba(245,241,233,.72);
   --navy-hair:rgba(245,241,233,.14);
-  --sans:"Almarai",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --display:"Readex Pro","Almarai",system-ui,sans-serif;
+  --sans:"Noto Sans Arabic",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Noto Kufi Arabic","Noto Sans Arabic",system-ui,sans-serif;
   --r:14px; --r-sm:10px;
   --ease:cubic-bezier(.2,.7,.2,1);
   --head:68px;
@@ -83,8 +83,11 @@ html[lang=en] .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.
 html[lang=en] .brand-t small{text-transform:uppercase;letter-spacing:.12em;font-size:.62rem}
 #nav{display:none}
 .top-act{margin-inline-start:auto;display:flex;align-items:center;gap:10px}
-.lang{min-width:46px;height:40px;border-radius:999px;border:1px solid var(--navy-hair);background:none;color:var(--on-navy);cursor:pointer;font-weight:600;font-size:.9rem;padding:0 12px;transition:border-color .2s,color .2s}
-.lang:hover{border-color:var(--gold);color:var(--gold)}
+.langs{display:flex;padding:3px;border:1px solid var(--navy-hair);border-radius:999px;gap:2px}
+.langs button{height:34px;min-width:40px;padding:0 10px;border:0;border-radius:999px;background:none;color:var(--on-navy-2);cursor:pointer;font-weight:600;font-size:.82rem;transition:background-color .2s,color .2s}
+.langs button:hover{color:var(--gold)}
+.langs button[aria-pressed=true]{background:var(--gold);color:var(--navy)}
+@media(max-width:380px){.langs button{min-width:34px;padding:0 7px;font-size:.78rem}}
 .top-cta{display:none}
 .menu-btn{width:44px;height:44px;border:0;background:none;cursor:pointer;display:grid;place-content:center;gap:6px;color:var(--on-navy)}
 .menu-btn span{display:block;width:22px;height:1.5px;background:currentColor;transition:transform .3s var(--ease),opacity .2s}
@@ -415,3 +418,18 @@ html:not(.ready) .reveal{opacity:1;transform:none}
   .pr-brand{color:#857656;font-weight:600;border-bottom:1px solid #C4A66A;padding-bottom:6pt}
   .pr-url{font-weight:600}
 }
+
+/* compact header on narrow phones (three-language switch) */
+@media(max-width:480px){
+  .top-in{gap:10px;width:calc(100% - 24px)}
+  .brand{gap:8px}
+  .brand svg{width:30px;height:30px}
+  .brand-t small{display:none}
+  .top-act{gap:6px}
+  .menu-btn{width:40px}
+}
+@media(max-width:350px){.brand-t{display:none}}
+.share{grid-template-columns:minmax(0,1fr)}
+.share-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sh span{min-width:0;overflow-wrap:anywhere}
+@media(min-width:900px){.share{grid-template-columns:.9fr 1.1fr}.share-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
