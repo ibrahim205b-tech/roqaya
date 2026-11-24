@@ -400,6 +400,35 @@
     }
   }
 
+  /* ================= التبرع تحت الصورة / donation under hero photo ================= */
+  var COPY_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h9a2 2 0 0 1 2 2v12M5 8h9a1 1 0 0 1 1 1v11H6a1 1 0 0 1-1-1V8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+  function renderHeroDonate() {
+    var D = S.donation || {}, box = $("heroDonate"); box.innerHTML = "";
+    if (!(D.enabled && D.methods && D.methods.length)) { box.hidden = true; return; }
+    box.hidden = false;
+    var tag = el("p", "hd-tag", U().heroDonT); tag.id = "hdTitle"; box.appendChild(tag);
+    D.methods.forEach(function (m) {
+      var row = el("div", "hd-row"), d = el("div");
+      d.appendChild(el("span", "", T(m.label)));
+      var n = el("strong", "", m.value); n.dir = "ltr"; d.appendChild(n);
+      row.appendChild(d);
+      var b = el("button", "hd-copy"); b.type = "button";
+      b.innerHTML = COPY_ICON; var bl = el("span", "", U().copyNum); b.appendChild(bl);
+      b.setAttribute("aria-label", U().copyNum + ": " + T(m.label));
+      b.addEventListener("click", function () { copy(m.value.replace(/\s/g, "")).then(function () { flash(bl, U().copied); b.classList.add("done"); setTimeout(function () { b.classList.remove("done"); }, 2000); }); });
+      row.appendChild(b); box.appendChild(row);
+    });
+    if (D.holder) {
+      var h = el("p", "hd-holder"); h.appendChild(document.createTextNode(U().heroHolder + " "));
+      h.appendChild(el("b", "", T(D.holder))); if (D.receiver) h.appendChild(document.createTextNode(" (" + T(D.receiver) + ")"));
+      box.appendChild(h);
+    }
+    var links = el("p", "hd-links");
+    if (D.whatsapp) { var w = el("a", "", U().heroVerify); w.href = wa(D.whatsapp, U().waDonateMsg); w.target = "_blank"; w.rel = "noopener"; links.appendChild(w); }
+    var more = el("a", "", U().heroMore); more.href = "#donate"; links.appendChild(more);
+    box.appendChild(links);
+  }
+
   /* ================= المساهمون / contributors ================= */
   function renderContrib() {
     var box = $("contrib"); box.innerHTML = "";
@@ -517,7 +546,7 @@
   /* ================= render ================= */
   function renderAll() {
     renderFilters(); renderDocs(); renderJourney(); renderNews(); renderAppeal();
-    renderDonate(); renderContrib(); renderShare(); renderHadiths(); renderFaq(); renderContacts();
+    renderDonate(); renderHeroDonate(); renderContrib(); renderShare(); renderHadiths(); renderFaq(); renderContacts();
     arm();
   }
   applyStatic(); renderAll();
