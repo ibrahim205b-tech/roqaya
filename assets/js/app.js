@@ -294,7 +294,7 @@
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
   function renderNews() {
     var box = $("news"); box.innerHTML = "";
-    var list = (S.updates || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    var list = (S.updates || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
     list.forEach(function (u, i) {
       var a = el("article", "post reveal" + (i === 0 ? " lead-post" : ""));
       if (u.photo) { var im = el("img", "post-img"); im.src = u.photo; im.alt = ""; im.loading = "lazy"; a.appendChild(im); }

@@ -97,7 +97,7 @@ window.SITE = {
   ],
 
   /* ---------------- الرحلة العلاجية / Treatment journey ----------------
-     status: "done" موثّق | "pending" قيد الانتظار | "next" قرار قادم
+     status: "done" موثّق بوثيقة | "family" بحسب العائلة | "pending" قيد الانتظار | "next" قرار قادم
      date: اكتبه فقط إذا كان موثّقاً. */
   journey: [
     { status: "done", date: "",
@@ -136,11 +136,26 @@ window.SITE = {
       text: { ar: "رفعت العائلة مناشدة لإحالة ملفها إلى لجنة الإخلاء الطبي وإرسالها للعلاج خارج العراق، وتحديداً إلى الهند، إذا تعذّر العلاج داخل البلاد.",
               en: "The family appealed for her file to be referred to the medical evacuation committee and for her to be treated abroad — specifically in India — if treatment is not available in Iraq.", ckb: "خێزانەکەی داوایان کرد دۆسیەکەی بنێردرێت بۆ لیژنەی گواستنەوەی پزیشکی و بۆ چارەسەر بنێردرێتە دەرەوەی عێراق، بە تایبەتی هیندستان، ئەگەر چارەسەرەکەی لە ناوخۆ دابین نەکرا." },
       source: { ar: "نص المناشدة", en: "Text of the appeal", ckb: "دەقی داواکە" } },
+    { status: "family", date: "",
+      when: { ar: "أربعة أشهر", en: "Four months", ckb: "چوار مانگ" },
+      title: { ar: "أربعة أشهر من التأجيل والمماطلة", en: "Four months of delays", ckb: "چوار مانگ دواخستن و دواکەوتن" },
+      text: { ar: "منذ أربعة أشهر ورقية تتنقّل ذهاباً وإياباً من محافظة كربلاء لمتابعة إجراءات ملفها، وسط تأجيلات متكررة ومماطلة في الإجراءات.",
+              en: "For four months, Ruqayya has been travelling back and forth from Karbala to follow up on her file, facing repeated postponements and delays in the procedures.",
+              ckb: "ماوەی چوار مانگە ڕوقەیە لە پارێزگای کەربەلاوە دێت و دەچێت بۆ بەدواداچوونی ڕێکارەکانی دۆسیەکەی، لە نێو دواخستنی بەردەوام و دواکەوتنی ڕێکارەکاندا." },
+      source: { ar: "عائلة رقية", en: "Ruqayya's family", ckb: "خێزانی ڕوقەیە" } },
+    { status: "family", date: "",
+      when: { ar: "قرار الوزارة", en: "The ministry's decision", ckb: "بڕیاری وەزارەت" },
+      title: { ar: "الوزارة لم توافق على تسفيرها إلى الهند", en: "The ministry did not approve sending her to India", ckb: "وەزارەت ڕەزامەندیی نەدا بە ناردنی بۆ هیندستان" },
+      text: { ar: "لم توافق وزارة الصحة على تسفير رقية إلى الهند عبر قسم الإخلاء الطبي، وتعذّرت بأنها لا يمكنها تسفير هذه الحالة إلى الهند.",
+              en: "The Ministry of Health did not approve sending Ruqayya to India through the medical evacuation department, saying it could not send this case to India.",
+              ckb: "وەزارەتی تەندروستی ڕەزامەندیی نەدا بە ناردنی ڕوقەیە بۆ هیندستان لە ڕێگەی بەشی گواستنەوەی پزیشکییەوە، و بیانووی ئەوەی هێنایەوە کە ناتوانێت ئەم حاڵەتە بنێرێتە هیندستان." },
+      source: { ar: "عائلة رقية", en: "Ruqayya's family", ckb: "خێزانی ڕوقەیە" } },
     { status: "pending", date: "",
       when: { ar: "الآن", en: "Now", ckb: "ئێستا" },
-      title: { ar: "ملف مكتمل بانتظار الإحالة", en: "Complete file, awaiting referral", ckb: "دۆسیەیەکی تەواو، لە چاوەڕوانیی ناردندا" },
-      text: { ar: "ملفها الطبي مكتمل، وهي تنتظر استكمال إجراءات الإحالة العلاجية.",
-              en: "Her medical file is complete and she is waiting for the treatment referral to be finalised.", ckb: "دۆسیە پزیشکییەکەی تەواوە، و چاوەڕێی تەواوبوونی ڕێکارەکانی ناردن بۆ چارەسەر دەکات." },
+      title: { ar: "ما زالت بحاجة إلى العلاج خارج العراق", en: "She still needs treatment outside Iraq", ckb: "هێشتا پێویستی بە چارەسەر هەیە لە دەرەوەی عێراق" },
+      text: { ar: "تقريرها الطبي يؤكد حاجتها إلى جراحة متقدمة خارج العراق. وبعد اعتذار الوزارة، تبحث عائلتها عن طريق آخر لتأمين علاجها.",
+              en: "Her medical report confirms she needs advanced surgery outside Iraq. Since the ministry declined, her family is looking for another way to secure her treatment.",
+              ckb: "ڕاپۆرتە پزیشکییەکەی جەخت دەکاتەوە کە پێویستی بە نەشتەرگەرییەکی پێشکەوتووە لە دەرەوەی عێراق. دوای ئەوەی وەزارەت داوای لێبوردنی کرد، خێزانەکەی بە دوای ڕێگایەکی تردا دەگەڕێن بۆ دابینکردنی چارەسەرەکەی." },
       source: { ar: "", en: "", ckb: "" } },
     { status: "next", date: "",
       when: { ar: "القرار القادم", en: "Next decision", ckb: "بڕیاری داهاتوو" },
@@ -152,6 +167,14 @@ window.SITE = {
 
   /* ---------------- التحديثات / Updates (الأحدث أولاً) ---------------- */
   updates: [
+    { date: "2026-11-24", photo: "",
+      title: { ar: "وزارة الصحة لم توافق على تسفير رقية إلى الهند", en: "Ministry of Health did not approve sending Ruqayya to India", ckb: "وەزارەتی تەندروستی ڕەزامەندیی نەدا بە ناردنی ڕوقەیە بۆ هیندستان" },
+      summary: { ar: "بعد أربعة أشهر من التأجيلات، تعذّرت الوزارة بأنها لا يمكنها تسفير حالتها إلى الهند عبر قسم الإخلاء الطبي.",
+                 en: "After four months of delays, the ministry said it could not send her case to India through the medical evacuation department.",
+                 ckb: "دوای چوار مانگ دواخستن، وەزارەت بیانووی ئەوەی هێنایەوە کە ناتوانێت حاڵەتەکەی لە ڕێگەی بەشی گواستنەوەی پزیشکییەوە بنێرێتە هیندستان." },
+      body: { ar: "بحسب عائلة رقية، لم توافق وزارة الصحة على تسفيرها إلى الهند عبر قسم الإخلاء الطبي، وتعذّرت بأنها لا يمكنها تسفير هذه الحالة إلى دولة الهند.\n\nجاء ذلك بعد أربعة أشهر من التأجيلات والمماطلة في الإجراءات، كانت رقية خلالها تتنقّل ذهاباً وإياباً من محافظة كربلاء لمتابعة ملفها، رغم مرضها.\n\nما زال تقريرها الطبي يؤكد حاجتها إلى جراحة متقدمة خارج العراق، وتبحث عائلتها اليوم عن طريق آخر لتأمين علاجها.",
+              en: "According to Ruqayya's family, the Ministry of Health did not approve sending her to India through the medical evacuation department, saying it could not send this case to India.\n\nThis came after four months of postponements and delays in the procedures, during which Ruqayya, despite her illness, travelled back and forth from Karbala to follow up on her file.\n\nHer medical report still confirms that she needs advanced surgery outside Iraq, and her family is now looking for another way to secure her treatment.",
+              ckb: "بەپێی قسەی خێزانی ڕوقەیە، وەزارەتی تەندروستی ڕەزامەندیی نەدا بە ناردنی بۆ هیندستان لە ڕێگەی بەشی گواستنەوەی پزیشکییەوە، و بیانووی ئەوەی هێنایەوە کە ناتوانێت ئەم حاڵەتە بنێرێتە وڵاتی هیندستان.\n\nئەمە دوای چوار مانگ دواخستن و دواکەوتنی ڕێکارەکان هات، کە لەو ماوەیەدا ڕوقەیە سەرەڕای نەخۆشییەکەی لە پارێزگای کەربەلاوە دەهات و دەچوو بۆ بەدواداچوونی دۆسیەکەی.\n\nڕاپۆرتە پزیشکییەکەی هێشتا جەخت دەکاتەوە کە پێویستی بە نەشتەرگەرییەکی پێشکەوتووە لە دەرەوەی عێراق، و خێزانەکەی ئێستا بە دوای ڕێگایەکی تردا دەگەڕێن بۆ دابینکردنی چارەسەرەکەی." } },
     { date: "2026-11-24", photo: "",
       title: { ar: "إطلاق النسخة الجديدة من منصة رقية", en: "The new Ruqayya platform is live", ckb: "وەشانی نوێی پلاتفۆرمی ڕوقەیە بڵاو کرایەوە" },
       summary: { ar: "صار الموقع متاحاً بالعربية والكردية والإنجليزية، مع أرشيف منظّم للوثائق الطبية ومسار زمني للرحلة العلاجية.",
@@ -217,8 +240,8 @@ window.SITE = {
   appeal: {
     title: { ar: "استغاثة إنسانية لعلاج رقية", en: "A humanitarian appeal for Ruqayya's treatment", ckb: "هاوارێکی مرۆیی بۆ چارەسەری ڕوقەیە" },
     body: {
-      ar: "رقية لؤي كاظم إبراهيم، شابة في الحادية والعشرين من عمرها من محافظة كربلاء المقدسة، تواجه انتكاساً في مرض ساركوما العظام الذي أصاب منطقة الحوض والعجز بالقرب من الفقرات.\n\nخضعت لعملية جراحية وإحدى عشرة دورة من العلاج الكيميائي، ثم أظهر فحص PET/CT في 9 آب 2026 أن المرض عاد وتقدّم. وفي 21 أيلول 2026 أكّد تقرير مستشفى الإمام الحسن المجتبى التعليمي حاجتها إلى جراحة متقدمة خارج العراق.\n\nتُقدَّر تكاليف رحلتها العلاجية بنحو 20,000 دولار أمريكي، وهو مبلغ يفوق قدرة عائلتها.\n\nنناشد أصحاب الأيادي البيضاء، والأطباء، والمؤسسات الطبية والإنسانية، الوقوف إلى جانبها. كل مساهمة، وكل مشاركة، قد تفتح أمامها باب أمل جديد.",
-      en: "Ruqayya Luay Kadhim Ibrahim is a 21-year-old young woman from Karbala, Iraq. She is facing a relapse of osteosarcoma, a bone cancer affecting her pelvis and sacrum, close to the spine.\n\nShe underwent surgery and eleven cycles of chemotherapy, but a PET/CT scan on 9 August 2026 showed that the disease had returned and was progressing. On 21 September 2026, a report from Imam Al-Hassan Al-Mujtaba Teaching Hospital confirmed that she needs advanced surgery outside Iraq.\n\nThe cost of her treatment journey is estimated at around US$20,000 — far beyond what her family can afford.\n\nWe appeal to generous people, doctors, and medical and humanitarian organisations to stand with her. Every contribution, and every share, could open a new door of hope for her.", ckb: "ڕوقەیە لوئەی کازم ئیبراهیم، کچێکی گەنجی بیست و یەک ساڵانە لە پارێزگای کەربەلا، ڕووبەڕووی گەڕانەوەی نەخۆشیی ئۆستیۆسارکۆما (شێرپەنجەی ئێسک) بووەتەوە، کە ناوچەی حەوز و عەجزی نزیک بڕبڕەکانی پشتی گرتووە.\n\nنەشتەرگەرییەکی بۆ کرا و یازدە خولی چارەسەری کیمیایی وەرگرت، بەڵام پشکنینی PET/CT لە ٩ی ئابی ٢٠٢٦ دەریخست کە نەخۆشییەکە گەڕاوەتەوە و پەرەی سەندووە. لە ٢١ی ئەیلوولی ٢٠٢٦ ڕاپۆرتی نەخۆشخانەی فێرکاریی ئیمام حەسەن موجتەبا جەختی کردەوە کە پێویستی بە نەشتەرگەرییەکی پێشکەوتووە لە دەرەوەی عێراق.\n\nتێچووی گەشتی چارەسەرەکەی بە نزیکەی ٢٠،٠٠٠ دۆلاری ئەمریکی مەزەندە دەکرێت، کە زۆر لە توانای خێزانەکەی زیاترە.\n\nداوا لە خەڵکی خێرخواز، پزیشکان، و دامەزراوە پزیشکی و مرۆییەکان دەکەین لە پاڵیدا بوەستن. هەر بەشدارییەک و هەر هاوبەشکردنێک لەوانەیە دەرگایەکی نوێی هیوای لێ بکاتەوە."
+      ar: "رقية لؤي كاظم إبراهيم، شابة في الحادية والعشرين من عمرها من محافظة كربلاء المقدسة، تواجه انتكاساً في مرض ساركوما العظام الذي أصاب منطقة الحوض والعجز بالقرب من الفقرات.\n\nخضعت لعملية جراحية وإحدى عشرة دورة من العلاج الكيميائي، ثم أظهر فحص PET/CT في 9 آب 2026 أن المرض عاد وتقدّم. وفي 21 أيلول 2026 أكّد تقرير مستشفى الإمام الحسن المجتبى التعليمي حاجتها إلى جراحة متقدمة خارج العراق.\n\nوبعد أربعة أشهر من التأجيلات والمماطلة في الإجراءات، كانت رقية خلالها تتنقّل ذهاباً وإياباً من محافظة كربلاء لمتابعة ملفها، لم توافق وزارة الصحة على تسفيرها إلى الهند عبر قسم الإخلاء الطبي.\n\nتُقدَّر تكاليف رحلتها العلاجية بنحو 20,000 دولار أمريكي، وهو مبلغ يفوق قدرة عائلتها.\n\nنناشد أصحاب الأيادي البيضاء، والأطباء، والمؤسسات الطبية والإنسانية، الوقوف إلى جانبها. كل مساهمة، وكل مشاركة، قد تفتح أمامها باب أمل جديد.",
+      en: "Ruqayya Luay Kadhim Ibrahim is a 21-year-old young woman from Karbala, Iraq. She is facing a relapse of osteosarcoma, a bone cancer affecting her pelvis and sacrum, close to the spine.\n\nShe underwent surgery and eleven cycles of chemotherapy, but a PET/CT scan on 9 August 2026 showed that the disease had returned and was progressing. On 21 September 2026, a report from Imam Al-Hassan Al-Mujtaba Teaching Hospital confirmed that she needs advanced surgery outside Iraq.\n\nAfter four months of postponements and delays, during which Ruqayya travelled back and forth from Karbala to follow up on her file, the Ministry of Health did not approve sending her to India through the medical evacuation department.\n\nThe cost of her treatment journey is estimated at around US$20,000 — far beyond what her family can afford.\n\nWe appeal to generous people, doctors, and medical and humanitarian organisations to stand with her. Every contribution, and every share, could open a new door of hope for her.", ckb: "ڕوقەیە لوئەی کازم ئیبراهیم، کچێکی گەنجی بیست و یەک ساڵانە لە پارێزگای کەربەلا، ڕووبەڕووی گەڕانەوەی نەخۆشیی ئۆستیۆسارکۆما (شێرپەنجەی ئێسک) بووەتەوە، کە ناوچەی حەوز و عەجزی نزیک بڕبڕەکانی پشتی گرتووە.\n\nنەشتەرگەرییەکی بۆ کرا و یازدە خولی چارەسەری کیمیایی وەرگرت، بەڵام پشکنینی PET/CT لە ٩ی ئابی ٢٠٢٦ دەریخست کە نەخۆشییەکە گەڕاوەتەوە و پەرەی سەندووە. لە ٢١ی ئەیلوولی ٢٠٢٦ ڕاپۆرتی نەخۆشخانەی فێرکاریی ئیمام حەسەن موجتەبا جەختی کردەوە کە پێویستی بە نەشتەرگەرییەکی پێشکەوتووە لە دەرەوەی عێراق.\n\nدوای چوار مانگ دواخستن و دواکەوتنی ڕێکارەکان، کە ڕوقەیە لەو ماوەیەدا لە کەربەلاوە دەهات و دەچوو بۆ بەدواداچوونی دۆسیەکەی، وەزارەتی تەندروستی ڕەزامەندیی نەدا بە ناردنی بۆ هیندستان لە ڕێگەی بەشی گواستنەوەی پزیشکییەوە.\n\nتێچووی گەشتی چارەسەرەکەی بە نزیکەی ٢٠،٠٠٠ دۆلاری ئەمریکی مەزەندە دەکرێت، کە زۆر لە توانای خێزانەکەی زیاترە.\n\nداوا لە خەڵکی خێرخواز، پزیشکان، و دامەزراوە پزیشکی و مرۆییەکان دەکەین لە پاڵیدا بوەستن. هەر بەشدارییەک و هەر هاوبەشکردنێک لەوانەیە دەرگایەکی نوێی هیوای لێ بکاتەوە."
     },
     footer: { ar: "قصتها ووثائقها كاملة:", en: "Her full story and documents:", ckb: "چیرۆک و بەڵگەنامەکانی بە تەواوی:" }
   },
@@ -232,8 +255,8 @@ window.SITE = {
       a: { ar: "ساركوما العظام، وهو ورم عظمي خبيث أصاب منطقة الحوض والعجز بالقرب من الفقرات. عاد المرض بعد الجراحة والعلاج الكيميائي، بحسب فحص PET/CT بتاريخ 9 آب 2026.",
            en: "Osteosarcoma, a malignant bone tumour in the pelvis and sacrum, close to the spine. According to a PET/CT scan dated 9 August 2026, the disease returned after surgery and chemotherapy.", ckb: "ئۆستیۆسارکۆما، کە شێرپەنجەیەکی ئێسکە و ناوچەی حەوز و عەجزی نزیک بڕبڕەکانی پشتی گرتووە. بەپێی پشکنینی PET/CT لە ٩ی ئابی ٢٠٢٦، نەخۆشییەکە دوای نەشتەرگەری و چارەسەری کیمیایی گەڕاوەتەوە." } },
     { q: { ar: "ما العلاج الذي تحتاجه؟", en: "What treatment does she need?", ckb: "پێویستی بە چ چارەسەرێکە؟" },
-      a: { ar: "بحسب تقرير مستشفى الإمام الحسن المجتبى التعليمي (21 أيلول 2026)، تحتاج إلى جراحة متقدمة خارج العراق. اقترحت العائلة الهند وجهةً للعلاج، لكن المستشفى والموعد لم يُحدَّدا بعد.",
-           en: "According to the Imam Al-Hassan Al-Mujtaba Teaching Hospital report (21 September 2026), she needs advanced surgery outside Iraq. The family has proposed India, but no hospital or date has been decided yet.", ckb: "بەپێی ڕاپۆرتی نەخۆشخانەی فێرکاریی ئیمام حەسەن موجتەبا (٢١ی ئەیلوولی ٢٠٢٦)، پێویستی بە نەشتەرگەرییەکی پێشکەوتووە لە دەرەوەی عێراق. خێزانەکەی هیندستانیان وەک شوێنی چارەسەر پێشنیار کردووە، بەڵام هێشتا نەخۆشخانە و کاتەکەی دیاری نەکراون." } },
+      a: { ar: "بحسب تقرير مستشفى الإمام الحسن المجتبى التعليمي (21 أيلول 2026)، تحتاج إلى جراحة متقدمة خارج العراق. طلبت العائلة تسفيرها إلى الهند عبر قسم الإخلاء الطبي، لكن وزارة الصحة لم توافق على ذلك بحسب العائلة، ولم يُحدَّد بعد مستشفى ولا موعد للجراحة.",
+           en: "According to the Imam Al-Hassan Al-Mujtaba Teaching Hospital report (21 September 2026), she needs advanced surgery outside Iraq. The family asked for her to be sent to India through the medical evacuation department, but according to the family the Ministry of Health did not approve it. No hospital or surgery date has been set yet.", ckb: "بەپێی ڕاپۆرتی نەخۆشخانەی فێرکاریی ئیمام حەسەن موجتەبا (٢١ی ئەیلوولی ٢٠٢٦)، پێویستی بە نەشتەرگەرییەکی پێشکەوتووە لە دەرەوەی عێراق. خێزانەکەی داوایان کرد لە ڕێگەی بەشی گواستنەوەی پزیشکییەوە بنێردرێتە هیندستان، بەڵام بەپێی قسەی خێزانەکە وەزارەتی تەندروستی ڕەزامەندیی نەدا، و هێشتا نە نەخۆشخانە و نە کاتی نەشتەرگەرییەکە دیاری نەکراون." } },
     { q: { ar: "هل يستقبل هذا الموقع الأموال؟", en: "Does this website collect money?", ckb: "ئایا ئەم ماڵپەڕە پارە وەردەگرێت؟" },
       a: { ar: "لا. لا يحتوي الموقع على بوابة دفع ولا يستلم أي مبلغ. التحويل يتم مباشرة إلى والد رقية عبر البيانات المنشورة في قسم التبرع والدعم.",
            en: "No. The site has no payment gateway and receives no money. Transfers go directly to Ruqayya's father using the details in the Donate & Support section.", ckb: "نەخێر. ماڵپەڕەکە دەروازەی پارەدانی تێدا نییە و هیچ پارەیەک وەرناگرێت. پارە ڕاستەوخۆ بۆ باوکی ڕوقەیە دەگوازرێتەوە لە ڕێگەی ئەو زانیارییانەی لە بەشی بەخشین و پشتگیریدا بڵاو کراونەتەوە." } },

@@ -433,3 +433,8 @@ html:not(.ready) .reveal{opacity:1;transform:none}
 .share-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .sh span{min-width:0;overflow-wrap:anywhere}
 @media(min-width:900px){.share{grid-template-columns:.9fr 1.1fr}.share-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* family-reported stage */
+.lg-family::before{background:var(--navy)}
+.st-family::before{background:var(--navy);box-shadow:0 0 0 5px var(--white),0 0 0 6px var(--gold)}
+.b-family{background:rgba(16,28,50,.08);color:var(--navy)}

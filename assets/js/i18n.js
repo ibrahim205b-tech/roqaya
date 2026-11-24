@@ -38,7 +38,7 @@ window.I18N = {
     "story.c4t": "The challenge today",
     "story.c4": "On 21 September 2026, a report from Imam Al-Hassan Al-Mujtaba Teaching Hospital confirmed that she needs advanced surgery outside Iraq. The cost of her treatment journey — treatment, travel and tests — is estimated at around US$20,000, far beyond what her family can afford.",
     "story.c5t": "Her family's efforts",
-    "story.c5": "Her family gathered her medical reports and appealed to the Minister of Health to refer her file to the medical evacuation committee and send her abroad for treatment — specifically to India — if she cannot be treated in Iraq.",
+    "story.c5": "Her family gathered her medical reports and appealed to the Minister of Health to refer her file to the medical evacuation committee and send her abroad for treatment — specifically to India. For four months of postponements and delays, Ruqayya travelled back and forth from Karbala to follow up on her file. In the end, the ministry did not approve sending her to India through the medical evacuation department, saying it could not send this case to India.",
     "story.c6t": "Why this platform exists",
     "story.c6": "This platform was created as a trustworthy reference for Ruqayya's story: it publishes her documents as they are, separates documented facts from what is still awaiting a decision, and carries her appeal to everyone who is able to help.",
 
@@ -51,7 +51,7 @@ window.I18N = {
     "journey.eyebrow": "03 · Treatment Journey",
     "journey.title": "From diagnosis to the next decision",
     "journey.intro": "Dates appear only when they are documented. Stages that have not been decided yet are clearly marked.",
-    "journey.done": "Documented", "journey.pending": "Pending", "journey.next": "Not yet decided",
+    "journey.done": "Documented", "journey.family": "Reported by the family", "journey.pending": "Pending", "journey.next": "Not yet decided",
 
     "updates.eyebrow": "04 · Latest Updates", "updates.title": "Latest news", "updates.viewDoc": "View the document",
 
@@ -132,7 +132,7 @@ window.I18N = {
     "story.c4t": "ئاستەنگی ئەمڕۆ",
     "story.c4": "لە ٢١ی ئەیلوولی ٢٠٢٦، ڕاپۆرتی نەخۆشخانەی فێرکاریی ئیمام حەسەن موجتەبا جەختی کردەوە کە پێویستی بە نەشتەرگەرییەکی پێشکەوتوو هەیە لە دەرەوەی عێراق. تێچووی گەشتی چارەسەرەکەی، لە چارەسەر و گەشت و پشکنینەکان، بە نزیکەی ٢٠،٠٠٠ دۆلاری ئەمریکی مەزەندە دەکرێت، کە زۆر لە توانای خێزانەکەی زیاترە.",
     "story.c5t": "هەوڵەکانی خێزانەکەی",
-    "story.c5": "خێزانەکەی ڕاپۆرتە پزیشکییەکانیان کۆکردەوە و داوایەکیان ئاراستەی وەزیری تەندروستی کرد بۆ ئەوەی دۆسیەکەی بنێردرێت بۆ لیژنەی گواستنەوەی پزیشکی و بۆ چارەسەر بنێردرێتە دەرەوەی عێراق، بە تایبەتی هیندستان، ئەگەر چارەسەرەکەی لە ناوخۆ دابین نەکرا.",
+    "story.c5": "خێزانەکەی ڕاپۆرتە پزیشکییەکانیان کۆکردەوە و داوایەکیان ئاراستەی وەزیری تەندروستی کرد بۆ ئەوەی دۆسیەکەی بنێردرێت بۆ لیژنەی گواستنەوەی پزیشکی و بۆ چارەسەر بنێردرێتە دەرەوەی عێراق، بە تایبەتی هیندستان. ماوەی چوار مانگ لە دواخستن و دواکەوتنی ڕێکارەکاندا، ڕوقەیە لە کەربەلاوە دەهات و دەچوو بۆ بەدواداچوونی دۆسیەکەی. لە کۆتاییدا وەزارەت ڕەزامەندیی نەدا بە ناردنی بۆ هیندستان لە ڕێگەی بەشی گواستنەوەی پزیشکییەوە، و بیانووی ئەوەی هێنایەوە کە ناتوانێت ئەم حاڵەتە بنێرێتە هیندستان.",
     "story.c6t": "بۆچی ئەم پلاتفۆرمە",
     "story.c6": "ئەم پلاتفۆرمە دروستکراوە بۆ ئەوەی سەرچاوەیەکی متمانەپێکراو بێت بۆ چیرۆکی ڕوقەیە: بەڵگەنامەکانی وەک خۆیان بڵاو دەکاتەوە، ڕاستییە بەڵگەدارەکان لەوانە جیا دەکاتەوە کە هێشتا چاوەڕێی بڕیارن، و هاوارەکەی دەگەیەنێتە هەموو ئەوانەی دەتوانن یارمەتی بدەن.",
 
@@ -145,7 +145,7 @@ window.I18N = {
     "journey.eyebrow": "٠٣ · گەشتی چارەسەر",
     "journey.title": "لە دەستنیشانکردنەوە بۆ بڕیاری داهاتوو",
     "journey.intro": "هیچ بەروارێک ناهێنین مەگەر بەڵگەدار بێت. ئەو قۆناغانەی هێشتا یەکلا نەکراونەتەوە بە ڕوونی دیاری کراون.",
-    "journey.done": "بەڵگەدار", "journey.pending": "لە چاوەڕوانیدا", "journey.next": "هێشتا یەکلا نەکراوەتەوە",
+    "journey.done": "بەڵگەدار", "journey.family": "بەپێی خێزانەکەی", "journey.pending": "لە چاوەڕوانیدا", "journey.next": "هێشتا یەکلا نەکراوەتەوە",
 
     "updates.eyebrow": "٠٤ · نوێترین هەواڵەکان", "updates.title": "دوایین پێشهاتەکان", "updates.viewDoc": "بینینی بەڵگەنامەکە",
 
@@ -203,7 +203,7 @@ window.I18N = {
       view: "عرض", download: "تحميل", noDate: "التاريخ غير مذكور", issuer: "الجهة",
       zoomIn: "تكبير", zoomOut: "تصغير", of: "من",
       source: "المصدر", readMore: "اقرأ المزيد",
-      st: { done: "موثّق", pending: "قيد الانتظار", next: "لم يُحسم بعد" },
+      st: { family: "بحسب العائلة", done: "موثّق", pending: "قيد الانتظار", next: "لم يُحسم بعد" },
       contribEmpty: "لا توجد مساهمات موثّقة منشورة بعد.",
       contribHow: "هل ساهمت في دعم رقية؟ تواصل معنا لإدراج اسمك أو اسم مؤسستك بعد التحقق وبموافقتك.",
       contribTypes: { individual: "أفراد", medical: "كوادر طبية", charity: "جمعيات خيرية", institution: "مؤسسات إنسانية" },
@@ -232,7 +232,7 @@ window.I18N = {
       view: "بینین", download: "داگرتن", noDate: "بەروار دیاری نەکراوە", issuer: "لایەنی دەرکەر",
       zoomIn: "گەورەکردن", zoomOut: "بچووککردنەوە", of: "لە",
       source: "سەرچاوە", readMore: "زیاتر بخوێنەوە",
-      st: { done: "بەڵگەدار", pending: "لە چاوەڕوانیدا", next: "هێشتا یەکلا نەکراوەتەوە" },
+      st: { family: "بەپێی خێزانەکەی", done: "بەڵگەدار", pending: "لە چاوەڕوانیدا", next: "هێشتا یەکلا نەکراوەتەوە" },
       contribEmpty: "هێشتا هیچ بەشدارییەکی پشتڕاستکراوە بڵاو نەکراوەتەوە.",
       contribHow: "بەشداریت لە پشتگیریی ڕوقەیەدا کردووە؟ پەیوەندیمان پێوە بکە بۆ دانانی ناوت یان ناوی دامەزراوەکەت، دوای پشتڕاستکردنەوە و بە ڕەزامەندیی خۆت.",
       contribTypes: { individual: "کەسەکان", medical: "ستافی پزیشکی", charity: "کۆمەڵە خێرخوازییەکان", institution: "دامەزراوە مرۆییەکان" },
@@ -261,7 +261,7 @@ window.I18N = {
       view: "View", download: "Download", noDate: "Date not stated", issuer: "Issued by",
       zoomIn: "Zoom in", zoomOut: "Zoom out", of: "of",
       source: "Source", readMore: "Read more",
-      st: { done: "Documented", pending: "Pending", next: "Not yet decided" },
+      st: { family: "Reported by the family", done: "Documented", pending: "Pending", next: "Not yet decided" },
       contribEmpty: "No verified contributions have been published yet.",
       contribHow: "Have you supported Ruqayya? Contact us to have your name or organisation listed — after verification and with your consent.",
       contribTypes: { individual: "Individuals", medical: "Medical professionals", charity: "Charities", institution: "Humanitarian institutions" },
