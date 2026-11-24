@@ -15,13 +15,12 @@
   --on-navy:#F5F1E9;
   --on-navy-2:rgba(245,241,233,.72);
   --navy-hair:rgba(245,241,233,.14);
-  --sans:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --display:"Noto Naskh Arabic","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --sans:"Almarai",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Readex Pro","Almarai",system-ui,sans-serif;
   --r:14px; --r-sm:10px;
   --ease:cubic-bezier(.2,.7,.2,1);
   --head:68px;
 }
-html[lang=en]{--display:"Playfair Display","IBM Plex Sans Arabic",system-ui,sans-serif}
 
 *,*::before,*::after{box-sizing:border-box}
 *{margin:0}
@@ -41,8 +40,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 @media(min-width:720px){.wrap{width:min(1180px,100% - 64px)}}
 
 /* ---------- type ---------- */
-h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.35;letter-spacing:0;text-wrap:balance}
-html[lang=en] h1,html[lang=en] h2{font-weight:600;letter-spacing:-.01em;line-height:1.15}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.35;letter-spacing:0;text-wrap:balance}
+html[lang=en] h1,html[lang=en] h2{letter-spacing:-.015em;line-height:1.2}
 html[lang=en] h3{font-family:var(--sans);font-weight:600}
 h2{font-size:clamp(1.85rem,4.4vw,3rem);max-width:20ch}
 h3{font-size:1.2rem}
@@ -79,7 +78,7 @@ html[lang=en] .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy);flex-shrink:0}
 .brand svg{width:34px;height:34px;color:var(--gold)}
 .brand-t{display:flex;flex-direction:column;line-height:1.15}
-.brand-t b{font-family:var(--display);font-size:1.3rem;font-weight:700}
+.brand-t b{font-family:var(--display);font-size:1.25rem;font-weight:600}
 .brand-t small{font-size:.7rem;color:var(--on-navy-2);letter-spacing:.02em}
 html[lang=en] .brand-t small{text-transform:uppercase;letter-spacing:.12em;font-size:.62rem}
 #nav{display:none}
@@ -157,7 +156,7 @@ html[lang=en] .hero-facts dt{text-transform:uppercase;letter-spacing:.12em;font-
 /* story */
 .story{display:grid;gap:44px}
 .pull{font-family:var(--display);font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.6;color:var(--navy);border-inline-start:2px solid var(--gold);padding-inline-start:22px}
-html[lang=en] .pull{font-style:italic;line-height:1.4}
+html[lang=en] .pull{line-height:1.5}
 .ledger{margin-top:34px;border-top:1px solid var(--hair)}
 .ledger div{display:grid;grid-template-columns:8.5em 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:.95rem}
 .ledger dt{color:var(--ink-3)}
@@ -165,7 +164,7 @@ html[lang=en] .pull{font-style:italic;line-height:1.4}
 .chapters{display:grid;gap:0}
 .chapter{display:grid;grid-template-columns:52px 1fr;column-gap:18px;padding:26px 0;border-top:1px solid var(--hair)}
 .chapter:last-child{border-bottom:1px solid var(--hair)}
-.ch-n{grid-row:span 2;font-family:"Playfair Display","Noto Naskh Arabic",system-ui,sans-serif;font-size:1.05rem;color:var(--gold);padding-top:4px}
+.ch-n{grid-row:span 2;font-family:var(--display);font-size:1.05rem;color:var(--gold);padding-top:4px}
 .chapter h3{font-size:1.28rem;margin-bottom:6px}
 .chapter p{color:var(--ink-2);max-width:62ch}
 @media(min-width:960px){
@@ -260,8 +259,8 @@ dialog.article::backdrop{background:rgba(16,28,50,.72);backdrop-filter:blur(3px)
 .appeal-tabs button[aria-selected=true]{background:var(--gold);color:var(--navy)}
 .appeal-card{background:var(--navy-2);border:1px solid var(--navy-hair);border-top:2px solid var(--gold);border-radius:var(--r);padding:clamp(26px,5vw,48px)}
 .appeal-card h3{font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--gold);margin-bottom:18px}
-.appeal-card[lang=en] h3{font-family:"Playfair Display","IBM Plex Sans Arabic",system-ui,sans-serif;font-weight:600}
-.appeal-card[lang=ar] h3{font-family:"Noto Naskh Arabic","IBM Plex Sans Arabic",system-ui,sans-serif}
+.appeal-card[lang=en] h3{font-family:var(--display);font-weight:600}
+.appeal-card[lang=ar] h3{font-family:var(--display)}
 .appeal-card p{color:var(--on-navy);margin-bottom:1em;font-size:1.03rem}
 .appeal-card .appeal-url{color:var(--on-navy-2);font-size:.92rem;margin:0}
 .appeal-url a{color:var(--gold)}
@@ -278,7 +277,7 @@ html[lang=en] .donate-copy .big{line-height:1.4}
 .donate-card{background:var(--white);border:1px solid var(--gold-hair);border-radius:var(--r);padding:clamp(22px,4vw,34px);box-shadow:0 24px 60px rgba(16,28,50,.08);align-self:start}
 .goal{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--hair)}
 .goal span{width:100%;font-size:.82rem;color:var(--ink-3)}
-.goal strong{font-family:"Playfair Display","IBM Plex Sans Arabic",system-ui,sans-serif;font-size:2.6rem;font-weight:600;line-height:1;color:var(--navy);direction:ltr}
+.goal strong{font-family:var(--display);font-size:2.6rem;font-weight:600;line-height:1;color:var(--navy);direction:ltr}
 .goal small{color:var(--ink-3)}
 .donate-card h3{font-size:1.05rem;margin-bottom:10px}
 .field{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--hair)}
@@ -298,7 +297,7 @@ html[lang=en] .donate-copy .big{line-height:1.4}
 .c-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:var(--r);overflow:hidden}
 .c-cat{background:var(--white);padding:24px 20px;display:flex;flex-direction:column;gap:4px}
 .c-cat em{font-style:normal;font-size:.8rem;color:var(--ink-3)}
-.c-cat strong{font-family:"Playfair Display","IBM Plex Sans Arabic",system-ui,sans-serif;font-size:2rem;line-height:1;color:var(--gold);font-weight:600}
+.c-cat strong{font-family:var(--display);font-size:2rem;line-height:1;color:var(--gold);font-weight:600}
 .c-cat span{font-size:.92rem;color:var(--ink-2)}
 @media(min-width:760px){.c-cats{grid-template-columns:repeat(4,1fr)}}
 .c-note{margin-top:22px;padding:24px;border:1px dashed var(--gold-hair);border-radius:var(--r);background:var(--white);display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px}
@@ -324,8 +323,8 @@ html[lang=en] .donate-copy .big{line-height:1.4}
 .mercy-h{text-align:center;color:var(--gold-ink);font-weight:600;font-size:.9rem;margin-bottom:26px}
 .hadiths{display:grid;gap:18px}
 .hadith{background:var(--white);border-radius:var(--r);padding:28px 30px;text-align:center;border:1px solid var(--hair)}
-.hadith p{font-family:"Noto Naskh Arabic","IBM Plex Sans Arabic",system-ui,sans-serif;font-size:clamp(1.15rem,2.2vw,1.4rem);line-height:1.9;color:var(--navy)}
-html[lang=en] .hadith p{font-family:"Playfair Display","IBM Plex Sans Arabic",system-ui,sans-serif;font-style:italic;line-height:1.55}
+.hadith p{font-family:var(--display);font-size:clamp(1.15rem,2.2vw,1.4rem);line-height:1.9;color:var(--navy)}
+html[lang=en] .hadith p{line-height:1.6}
 .hadith cite{display:block;margin-top:10px;font-style:normal;font-size:.82rem;color:var(--ink-3)}
 @media(min-width:860px){.hadiths{grid-template-columns:1fr 1fr}}
 
@@ -333,7 +332,7 @@ html[lang=en] .hadith p{font-family:"Playfair Display","IBM Plex Sans Arabic",sy
 .faq-wrap{max-width:900px}
 .faq{border-top:1px solid var(--hair)}
 .qa{border-bottom:1px solid var(--hair)}
-.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0;font-family:var(--display);font-size:1.15rem;font-weight:700}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0;font-family:var(--display);font-size:1.1rem;font-weight:500}
 html[lang=en] .qa summary{font-family:var(--sans);font-weight:600;font-size:1.05rem}
 .qa summary::-webkit-details-marker{display:none}
 .qa summary i{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid var(--gold-hair);position:relative;transition:transform .3s var(--ease),background-color .3s}

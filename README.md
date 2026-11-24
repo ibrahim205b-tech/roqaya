@@ -37,7 +37,7 @@ site/
 ├── assets/js/i18n.js     الترجمة الإنجليزية لنصوص الواجهة
 ├── assets/js/app.js      المنطق: اللغة، والوثائق، والعارض، والمشاركة، والنموذج
 ├── assets/css/style.css  الهوية البصرية
-├── assets/fonts/         خطوط مستضافة محلياً (IBM Plex Sans Arabic، Noto Naskh Arabic، Playfair Display)
+├── assets/fonts/         خطوط مستضافة محلياً (Readex Pro للعناوين، Almarai للنصوص)
 ├── assets/img/           صورة رقية، والوثائق، وصورة المشاركة og.png، والأيقونات
 ├── _headers  robots.txt  sitemap.xml
 ```

@@ -467,7 +467,6 @@
     (S.hadiths || []).forEach(function (h) {
       var q = el("blockquote", "hadith reveal");
       q.appendChild(el("p", "", (lang === "ar" ? "«" : "“") + T(h.text) + (lang === "ar" ? "»" : "”")));
-      q.appendChild(el("cite", "", T(h.source)));
       box.appendChild(q);
     });
   }
