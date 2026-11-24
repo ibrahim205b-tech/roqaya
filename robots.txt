@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://roqayya.pages.dev/sitemap.xml

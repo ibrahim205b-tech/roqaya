@@ -1,71 +1,81 @@
-# استغاثة رقية
+# موقع رقية — Ruqayya humanitarian website
 
-موقع إنساني ثابت (HTML + CSS + JavaScript) للتعريف بحالة المريضة رقية، وعرض وثائقها الطبية، وتسهيل المشاركة والتواصل.
+موقع ثابت (HTML وCSS وJavaScript) بلا خادم ولا قاعدة بيانات ولا خدمات مدفوعة. يعمل على Cloudflare Pages
+(مكان استضافته الحالي `roqayya.pages.dev`) وعلى GitHub Pages أو أي استضافة ثابتة.
 
-## بنية المشروع
+A static site (HTML/CSS/JS): no server, no database, no paid services. Runs on Cloudflare Pages
+(current host), GitHub Pages or any static host.
 
-```
-index.html              الصفحة الرئيسية
-assets/css/style.css    التصميم
-assets/js/content.js    كل البيانات القابلة للتعديل (هذا الملف الذي تعدّله)
-assets/js/app.js        منطق العرض (لا حاجة لتعديله)
-assets/img/docs/        النسخ المنقّحة من الوثائق
-assets/img/og.png       صورة المعاينة عند مشاركة الرابط
-```
+## التشغيل محلياً / Run locally
 
-## التشغيل محلياً
-
-لا يحتاج إلى تثبيت أي شيء. افتح `index.html` في المتصفح مباشرة، أو شغّل خادماً بسيطاً:
-
-```
-python3 -m http.server 8000
+```bash
+python3 -m http.server 8765
 ```
 
-ثم افتح `http://localhost:8000`.
+ثم افتح `http://localhost:8765` في المتصفح. للنسخة الإنجليزية: `http://localhost:8765/?lang=en`.
 
-## النشر على GitHub Pages
+Then open `http://localhost:8765`. For English, add `?lang=en`.
 
-1. ادخل إلى المستودع على GitHub ثم Settings ثم Pages.
-2. في Source اختر **Deploy from a branch**.
-3. اختر الفرع `main` والمجلد `/ (root)` ثم Save.
-4. بعد دقيقة تقريباً يعمل الموقع على: https://roqayya.pages.dev/ (مع HTTPS تلقائياً).
+## النشر / Deploy
 
-إذا تغيّر الرابط (نطاق خاص مثلاً) عدّل `url` في `assets/js/content.js` وروابط `og:` و`canonical` في `index.html`.
+الكود في هذا المستودع على GitHub، ومشروع Cloudflare Pages مربوط به (`roqayya.pages.dev`).
+كل دفع (push) إلى الفرع `main` يُنشر تلقائياً. والدفع إلى أي فرع آخر يولّد رابط معاينة منفصلاً
+دون المساس بالموقع المنشور.
 
-## تحديث المحتوى
+The code lives on GitHub and Cloudflare Pages is connected to this repository. Pushing to `main`
+deploys automatically; pushing to any other branch creates a separate preview URL.
 
-كل شيء في `assets/js/content.js`، ويمكن تعديله من موقع GitHub نفسه (زر القلم ثم Commit):
+يعمل أيضاً على GitHub Pages دون تعديل (الملف `.nojekyll` موجود). الملف `_headers` خاص بـ Cloudflare،
+ويتجاهله GitHub Pages دون ضرر.
 
-| المطلوب | الحقل |
-| --- | --- |
-| صورة رقية في الواجهة | `heroPhoto` |
-| إضافة مرحلة جديدة للقصة | `timeline` |
-| إضافة وثيقة | `documents` (ارفع الصورة إلى `assets/img/docs/` أولاً) |
-| صور المعرض | `gallery` |
-| بيانات التبرع | `donation` (المحفظة، الحساب، الهاتف) |
-| واتساب وبريد إبراهيم وصورته | `advocate` |
+## هيكل المشروع / Structure
 
-قسم التحويلات يبقى مخفياً ما دام `donation.enabled` يساوي `false`.
+```
+site/
+├── index.html            الصفحة والنص العربي الأساسي (لمحركات البحث)
+├── assets/js/content.js  ← كل بيانات الموقع باللغتين: هذا الملف الوحيد الذي تحتاج إلى تعديله
+├── assets/js/i18n.js     الترجمة الإنجليزية لنصوص الواجهة
+├── assets/js/app.js      المنطق: اللغة، والوثائق، والعارض، والمشاركة، والنموذج
+├── assets/css/style.css  الهوية البصرية
+├── assets/fonts/         خطوط مستضافة محلياً (IBM Plex Sans Arabic، Noto Naskh Arabic، Playfair Display)
+├── assets/img/           صورة رقية، والوثائق، وصورة المشاركة og.png، والأيقونات
+├── _headers  robots.txt  sitemap.xml
+```
 
-### قبل رفع أي وثيقة
+## تحديث المحتوى / Editing content
 
-المستودع عام، وكل ملف يُرفع إليه يصبح متاحاً للجميع حتى لو لم يُعرض في الصفحة.
-احجب من الصورة قبل رفعها: تاريخ الميلاد، أرقام الهواتف، أرقام الملفات والكتب، وأي معلومة لم توافق العائلة على نشرها.
-لكل وثيقة صورة مصغّرة اختيارية باسم `الاسم-thumb.jpg`؛ إن لم توجد تُستخدم الصورة الأصلية.
+افتح `assets/js/content.js`. كل نص مكتوب بالشكل `{ ar: "...", en: "..." }`.
 
-## البيانات المطلوب تزويدها
+| ما تريد | أين |
+|---|---|
+| نشر تحديث جديد | `updates` (انسخ عنصراً وعدّل التاريخ والعنوان والنص؛ `photo` اختياري) |
+| إضافة وثيقة | ضع الصورة في `assets/img/docs/` (ونسخة مصغرة باسم `-thumb.jpg` اختيارية)، ثم أضف عنصراً في `documents` |
+| تصنيف الوثيقة | `cat`: `diagnosis` · `imaging` · `lab` · `genetic` · `opinion` · `treatment` · `official` |
+| مرحلة في الرحلة العلاجية | `journey` (`status`: `done` موثّق · `pending` قيد الانتظار · `next` لم يُحسم) |
+| إضافة مساهم | `contributors`، **بعد التحقق وبإذن صاحبه فقط** |
+| وسائل التبرع | `donation` (اجعل `enabled: false` لإظهار إشعار «قيد التحقق» بدلاً منها) |
+| إخفاء قسم كامل | `sections` (اجعل قيمته `false`) |
+| نص الاستغاثة | `appeal` |
+| الأسئلة الشائعة | `faq` |
 
-- موافقة العائلة على نشر الوثائق المعروضة حالياً، وعلى ذكر الاسم كما يظهر فيها.
-- صورة رقية (أو صورة تخفي الوجه) بموافقة العائلة.
-- وثيقة مستشفى وارث الدولي بعدم توفر العملية داخل العراق.
-- رقم بطاقة الماستر كارد، اسم صاحبها، ومن يستلم الأموال.
-- رقم هاتف والد رقية ورقم واتساب، بموافقته.
-- رقم واتساب إبراهيم علي، وبريده وصورته إن رغب.
-- صور المعرض.
+**قاعدة ثابتة:** لا تُضِف معلومة طبية أو مالية أو اسم داعم قبل التحقق منه وموافقة صاحبه.
 
-## ما يحتاج إلى خدمة خارجية
+## نظام الإدارة مستقبلاً / Future admin
 
-- **لوحة إدارة**: غير موجودة. لوحة آمنة فعلاً تحتاج إلى خادم وتسجيل دخول حقيقي؛ كلمة مرور داخل JavaScript ليست حماية. البديل المجاني الآمن هو تعديل `content.js` من حسابك على GitHub.
-- **استقبال التبرعات داخل الموقع**: غير موجود. يحتاج إلى بوابة دفع مرخّصة وحساب تجاري. الموقع يعرض بيانات التحويل المباشر فقط.
-- **نطاق خاص** (مثل roqaya.org): اختياري، بكلفة سنوية تقريبية 10 إلى 15 دولاراً.
-- الخطوط تُحمَّل من Google Fonts مجاناً.
+لا توجد لوحة إدارة في الموقع، عن قصد: الموقع ثابت، ولوحة لا تحفظ البيانات ستكون مضلّلة.
+البيانات كلها في `content.js` ببنية واضحة. لربط نظام إدارة حقيقي لاحقاً:
+
+1. انقل `window.SITE` إلى ملف `content.json` بالبنية نفسها، واجعل `app.js` يقرؤه عبر `fetch`.
+2. اربط المستودع بنظام إدارة يعمل مع Git، مثل **Decap CMS** (مجاني، ويعمل مع Cloudflare Pages وGitHub)،
+   وعرّف فيه المجموعات نفسها: `updates` و`documents` و`journey` و`contributors` و`donation` و`sections`.
+3. كل حفظ في اللوحة يصبح commit، وتعيد Cloudflare Pages النشر تلقائياً.
+
+The site intentionally has no admin dashboard (a static dashboard could not save anything).
+All data lives in one structured file, so a Git-based CMS such as Decap CMS can be connected later
+without redesigning anything.
+
+## ما يتطلب خدمة خارجية / Needs an external service
+
+- **نموذج التواصل:** لا يوجد خادم، لذلك يفتح النموذج واتساب برسالة جاهزة، ولا يدّعي أنه أرسل شيئاً.
+  لاستقبال الرسائل على الموقع نفسه تلزم خدمة نماذج (مثل Formspree أو Cloudflare Workers).
+- **أرقام الزيارات أو المشاركات:** غير مفعّلة. تتطلب أداة إحصاء.
