@@ -211,8 +211,8 @@ window.SITE = {
       { label: { ar: "رقم المحفظة (ماستر كارد)", en: "Wallet number (Mastercard)", ckb: "ژمارەی جزدان (ماستەرکارد)" }, value: "910192624815", copy: true },
       { label: { ar: "رقم الحساب المصرفي (مصرف الرافدين)", en: "Bank account (Rafidain Bank)", ckb: "ژمارەی هەژماری بانکی (بانکی ڕافیدەین)" }, value: "3673129643", copy: true }
     ],
-    holder: { ar: "رقية كاظم إبراهيم", en: "Luay Kadhim Ibrahim", ckb: "لوئەی کازم ئیبراهیم" },
-    receiver: { ar: "والد رقية", en: "Ruqayya's father", ckb: "باوکی ڕوقەیە" },
+    holder: { ar: "رقية لؤي كاظم", en: "Luay Kadhim Ibrahim", ckb: "لوئەی کازم ئیبراهیم" },
+    receiver: { ar: "وأختها فاطمة لؤي ", en: "Ruqayya's father", ckb: "باوکی ڕوقەیە" },
     whatsapp: "9647801513941"
   },
 
