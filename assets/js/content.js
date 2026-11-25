@@ -206,7 +206,7 @@ window.SITE = {
   /* ---------------- التبرع / Donation (بيانات منشورة سابقاً بموافقة العائلة) ---------------- */
   donation: {
     enabled: true,
-    goalUSD: 20000,
+    goalUSD: 21000,
     methods: [
       { label: { ar: "رقم المحفظة (ماستر كارد)", en: "Wallet number (Mastercard)", ckb: "ژمارەی جزدان (ماستەرکارد)" }, value: "910192624815", copy: true },
       { label: { ar: "رقم الحساب المصرفي (مصرف الرافدين)", en: "Bank account (Rafidain Bank)", ckb: "ژمارەی هەژماری بانکی (بانکی ڕافیدەین)" }, value: "3673129643", copy: true }
